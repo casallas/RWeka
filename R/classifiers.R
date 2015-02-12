@@ -246,7 +246,6 @@ function(formula, ...)
     mf <- formula$call
     mf <- mf[c(1L, match(c("formula", "data", "subset", "na.action"),
                          names(mf), 0L))]
-    mf$drop.unused.levels <- TRUE
     mf[[1L]] <- as.name("model.frame")
     mf[names(nargs)] <- nargs
     if(is.null(env <- environment(formula$terms)))
